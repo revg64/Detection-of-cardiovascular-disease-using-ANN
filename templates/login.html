@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background:
+        linear-gradient(rgba(244,247,251,0.95), rgba(244,247,251,0.95)),
+        url("https://www.transparenttextures.com/patterns/heartbeat.png");
+}
+
+header {
+    background: linear-gradient(135deg, #0b3c5d, #1e6fa1);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+}
+
+.box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 400px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    background: #1e6fa1;
+    color: white;
+    border: none;
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+}
+.create-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    background: linear-gradient(270deg, #00c6ff, #0072ff);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.create-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Cardiovascular Disease Detection System</h1>
+    <p>Myocardial Infarction | Arrhythmia | History of MI | Normal</p>
+</header>
+
+<div class="main">
+    <div class="box">
+
+        <h2>Login</h2>
+
+        <form method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        {% if error %}
+        <p style="color:red;">{{ error }}</p>
+        {% endif %}
+
+        <a href="/register" class="create-btn">Create Account</a>
+
+    </div>
+</div>
+
+</body>
+</html>
